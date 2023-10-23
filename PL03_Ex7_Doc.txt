@@ -1,0 +1,15 @@
+/** I don't need to limit the array length to control overflow, because I sat the nUpperLimit
+* and If all array elements are equals 1 I don't validate the array input **/
+//        if (nums.length > 100) return false; --> not needed
+
+/** we can't have any 0 element in the array otherwise the *= will never be > than n **/
+/** we can't have any negative elements, so we can control the results **/
+
+/** Not neeed to consider because when I validate I sat the nUpperLimit and since I'll always reach
+* a sum prod value that is higher the nUpperLimit in the first few loops (for minimum case an array of all 2's)
+* then I'll never have overflow.
+* To prevent overflow and considering we have a max array length of 100, we need to consider the case
+* in which all elements are the same maxValue and we loop through the whole array without overflow **/
+//            if (num >= 1000) return false;
+
+/** If I have an array with all 1's && n >= 1 then there's no result **/
