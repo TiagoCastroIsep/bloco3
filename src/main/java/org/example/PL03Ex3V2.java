@@ -40,6 +40,7 @@ public class PL03Ex3V2 {
     }
 
     public static double averageOfMultiplesInInterval(int n, int a, int b) {
+        if (a == b) return -1.0;
         int[] orderedInterval = validateIntervalValues(a, b);
         if (orderedInterval == null) return -1.0;
 
@@ -55,6 +56,7 @@ public class PL03Ex3V2 {
 
     public static double averageOfMultiplesOfOneOrOtherNumberInInterval(int x, int y, int a, int b, int selectedNumber) {
         /** assuming X or Y and that selectedNumber==0 is a code to run x and selectedNumber==1 is a code to run y **/
+        if (a == b) return -1.0;
         if (x < 0) return -1.0;
         if (y < 0) return -1.0;
 
