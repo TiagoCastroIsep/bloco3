@@ -2,6 +2,7 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -59,5 +60,25 @@ class PL03Ex8Test {
                 {2, 3}
         };
         assertArrayEquals(expected, PL03Ex8.getAllSumCombinationsAlternativeSolution(number));
+    }
+
+    @Test
+    public void shouldReturnCorrectValueFor20() {
+        int number = 20;
+        int[][] expected = {
+                {10, 10},
+        };
+        assertArrayEquals(expected, PL03Ex8.findCombinationsAlternativeSolution(number));
+    }
+
+    @Test
+    public void shouldReturnCorrectValueFor20_ArrayList() {
+        int number = 20;
+        List<Integer> result = new ArrayList<>();
+        result.add(0, 10);
+        result.add(1, 10);
+        List<List<Integer>> expected = new ArrayList<>();
+        expected.add(result);
+        assertEquals(expected, PL03Ex8.getAllSumCombinations(number));
     }
 }

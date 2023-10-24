@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class PL03Ex8 {
@@ -22,9 +23,14 @@ public class PL03Ex8 {
             return combinations;
         }
 
-        for (int i = 0; i < (number / 2) + 1; i++) {
+        for (int i = 0, j = number - i; i < (number / 2) + 1; i++) {
+            if (j > 10) {
+                j--;
+                continue;
+            }
             sums[0] = i;
-            sums[1] = number - i;
+            sums[1] = j;
+            j--;
             combinations.add(List.of(sums));
         }
 
@@ -38,15 +44,35 @@ public class PL03Ex8 {
         return findCombinationsAlternativeSolution(number);
     }
 
-    private static int[][] findCombinationsAlternativeSolution(int number) {
-        int[][] sums = new int[(number / 2) + 1][2];
+    public static int[][] findCombinationsAlternativeSolution(int number) {
+        int arrayLength = findArrayLength(number);
+        int[][] sums = new int[arrayLength][2];
 
-        for (int i = 0; i <= number / 2; i++) {
-            sums[i][0] = i;
-            sums[i][1] = number - i;
+        int count = 0;
+        for (int i = 0, j = number - i; i <= number / 2; i++) {
+            if (j > 10) {
+                j--;
+                continue;
+            }
+            sums[count][0] = i;
+            sums[count][1] = j;
+            j--;
+            count++;
         }
 
         return sums;
+    }
+
+    private static int findArrayLength(int number) {
+        int count = 0;
+        for (int i = 0, j = number - i; i <= number / 2; i++) {
+            if (j > 10) {
+                j--;
+                continue;
+            }
+            count++;
+        }
+        return count;
     }
     /** END - Alternative solution with just plain arrays **/
 
