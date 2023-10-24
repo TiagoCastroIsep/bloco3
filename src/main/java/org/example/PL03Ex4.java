@@ -1,19 +1,11 @@
 package org.example;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 
 public class PL03Ex4 {
-    /** colocar limite máximo e minimo no numero **/
-    /** a nível de métodos o exercicio está completo **/
-
-//    public static void apanharNumDigitosDeNumer(long num) {
-//        long[] numArray = getArrayFromEachDigit(num);
-//        int count = 0;
-//        if (numArray == null) return;
-//        var data = Arrays.stream(numArray).count();
-//        System.out.println(data);
-//    }
-
     public static long getReversedOrderOfLongNumber(long number) {
         long[] digitsArray = getArrayFromEachDigit(number);
         if (digitsArray == null) return -1L;
